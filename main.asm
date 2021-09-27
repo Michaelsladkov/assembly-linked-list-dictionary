@@ -23,6 +23,15 @@ _start:
     mov rsi, 256
     mov rdi, input_buffer
     call read_word
+
+    ;кусок для дебага на считывании ключа
+    push rax
+    mov rdi, input_buffer
+    call print_err
+    call print_newline
+    call print_newline
+    pop rax
+
     test rax, rax
     jz .input_fail
     mov rdi, input_buffer

@@ -7,7 +7,7 @@
             .next: dq 0
         %endif
         %define NEXT_ELEM %2
-        .key: db %1
+        .key: db %1, 0
         .value:
     %else
         %fatal "Not correct label"

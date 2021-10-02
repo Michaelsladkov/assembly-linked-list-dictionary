@@ -12,6 +12,7 @@ global parse_int
 global string_equals
 global string_copy
 global print_err
+global print_newline_std_err
 
 
 section .data
@@ -77,6 +78,14 @@ print_char:
 print_newline:
     mov rax, 1
     mov rdi, 1;
+    mov rsi, newline
+    mov rdx, 1
+    syscall
+    ret
+
+print_newline_std_err:
+    mov rax, 1
+    mov rdi, 2;
     mov rsi, newline
     mov rdx, 1
     syscall

@@ -1,6 +1,5 @@
 global find_word
 %include "lib.inc"
-%include "lib.inc"
 
 section .text
 ; указатель на строку, по которой мы ищем -> rdi

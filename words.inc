@@ -1,5 +1,3 @@
-section .rodata
-
 colon 'first', first_word ; вызов макроса для размещения блока ('ключ', уникальное имя метки блока)
 db 'first_word', 0 ; значение, хранящееся в блоке
 colon 'second', second_word

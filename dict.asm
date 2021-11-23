@@ -1,8 +1,6 @@
 global find_word
-extern string_equals
-extern string_length
-extern print_err
-extern print_newline
+%include "lib.inc"
+%include "lib.inc"
 
 section .text
 ; указатель на строку, по которой мы ищем -> rdi
@@ -17,7 +15,7 @@ find_word:
     cmp rax, 1
     je .success
     .fail:
-        cmp [rsi], byte 0 ; если указатель на след. блок нулевой, то мы на последнем блоке - пора заканчивать
+        cmp [rsi], word 0 ; если указатель на след. блок нулевой, то мы на последнем блоке - пора заканчивать
         jne .continue ; иначе го на следующий блок
         xor rax, rax
         ret 

@@ -2,14 +2,14 @@
 global _start
 %include "lib.inc"
 %include "dict.inc"
-%include "words.inc"
 section .rodata
+%include "words.inc"
 input_greet: db 'enter key to search: ', 0
 input_fail_message: db 'your key is not valid (empty or too long)', 0
 find_fail_message: db 'nothing found for this key', 0
 
-section .data
-input_buffer: times 256 db 0
+section .bss
+input_buffer: resb 256
 
 section .text
 _start:
